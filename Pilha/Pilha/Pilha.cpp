@@ -83,17 +83,31 @@ void push()
 		return;
 	}
 
+	
 	cout << "Digite o elemento: ";
 	cin >> novo->valor;
-	novo->prox = NULL;
+	novo->prox = topo;
 
+	cout << "Elemento " << novo->valor << " inserido na pilha.\n";
+
+	
 
 }
 
 void pop()
 {
 
-	
+	if (topo == NULL) {
+		cout << "Erro: Pilha vazia. Nao ha elementos para remover.\n";
+		return;
+	}
 
+	
+	NO* paraRemover = topo;
+	topo = topo->prox;
+	cout << "Elemento " << paraRemover->valor << " removido da pilha.\n";
+	free(paraRemover);
 }
+
+
 
